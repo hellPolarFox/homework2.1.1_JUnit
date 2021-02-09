@@ -1,4 +1,3 @@
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -8,9 +7,9 @@ import java.util.List;
 
 public class PhoneContactsTest {
 
-    PhoneContacts phoneContacts;
-    Contact contact;
-    List<Contact> list = new ArrayList<>();
+    private PhoneContacts phoneContacts;
+    private Contact contact;
+    private List<Contact> list = new ArrayList<>();
 
     @BeforeEach
     void before() {
@@ -18,18 +17,8 @@ public class PhoneContactsTest {
         contact = new Contact("a", "b", "1");
     }
 
-    @AfterEach
-    void after() {
-        phoneContacts = null;
-        contact = null;
-        list = null;
-
-        System.out.println("Test succeeded");
-    }
-
-
     @Test
-    void WhenAddingNewGroupToMap() {
+    void whenAddingNewGroupToMap() {
         String group = "test";
         phoneContacts.addGroupToMap(group);
 
@@ -37,7 +26,7 @@ public class PhoneContactsTest {
     }
 
     @Test
-    void WhenAddingNewContactToMap() {
+    void whenAddingNewContactToMap() {
         String group = "test";
         list.add(contact);
 
@@ -48,7 +37,7 @@ public class PhoneContactsTest {
     }
 
     @Test
-    void WhenCreatingNewContactFromConsoleWithoutPhoneNumber() {
+    void whenCreatingNewContactFromConsoleWithoutPhoneNumber() {
         String input = "name surname";
         String[] parts = input.split(" ");
 
